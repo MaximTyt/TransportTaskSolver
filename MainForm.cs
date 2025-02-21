@@ -138,8 +138,7 @@ namespace TransportTask
                     }
                 }
                 TransportProblemSolver solver = new TransportProblemSolver(a, b, c);
-                solver.solve();
-                //solver.Solve();
+                solver.solve();                
                 data_out.RowCount = data_in.RowCount - 1;
                 data_out.ColumnCount = data_in.ColumnCount - 1;
                 data_out.ColumnHeadersVisible = false;
@@ -157,80 +156,7 @@ namespace TransportTask
                     Console.WriteLine();
                 }
                 textBox1.Text = solver.result.ToString();
-            }
-
-            ////Количество A
-            //int n = data_in.RowCount - 1;
-            //double[] a = new double[n];
-
-            ////Количество B
-            //int m = data_in.ColumnCount - 1;
-            //double[] b = new double[m];
-            //Element[,] C = new Element[n, m];
-            ////a[i]            
-            //for (int i = 0; i < a.Length; i++)
-            //{
-            //    a[i] = Convert.ToDouble(data_in.Rows[i].Cells[data_in.ColumnCount - 1].Value);
-            //}
-            ////b[j]
-            //for (int j = 0; j < b.Length; j++)
-            //{
-            //    b[j] = Convert.ToDouble(data_in.Rows[data_in.RowCount - 1].Cells[j].Value);
-            //}
-            ////C[i][j]
-            //for (int i = 0; i < n; i++)
-            //{
-            //    for (int j = 0; j < m; j++)
-            //    {
-            //        C[i, j].Value = Convert.ToDouble(data_in.Rows[i].Cells[j].Value.ToString().Replace('.', ','));
-            //    }
-            //}
-            //// действуем по алгоритму 
-            //// идём с северо-западного элемента 
-            //// если a[i] = 0 i++
-            //// если b[j] = 0 j++
-            ////  если a[i],b[j] = 0 то i++,j++;
-            //// доходим до последнего i , j
-
-            ////Оператор while выполняет оператор или блок операторов, пока определенное выражение не примет значение false.
-            //int _i = 0, _j = 0;
-            //while (_i < n && _j < m)
-            //{
-            //    try
-            //    {
-            //        if (a[_i] == 0) { _i++; }
-            //        if (b[_j] == 0) { _j++; }
-            //        if (a[_i] == 0 && b[_j] == 0) { _i++; _j++; }
-            //        C[_i, _j].Delivery = Element.FindMinElement(a[_i], b[_j]);
-            //        a[_i] -= C[_i, _j].Delivery;
-            //        b[_j] -= C[_i, _j].Delivery;
-            //    }
-            //    catch { }
-            //}
-            //data_out.RowCount = data_in.RowCount - 1;
-            //data_out.ColumnCount = data_in.ColumnCount - 1;
-            //data_out.ColumnHeadersVisible = false;
-            //data_out.RowHeadersVisible = false;
-            ////выводим массив во вторую таблицу
-            //for (int i = 0; i < n; i++)
-            //{
-            //    for (int j = 0; j < m; j++)
-            //    {
-            //        data_out.Rows[i].Cells[j].Value = C[i, j].Delivery;
-            //    }
-            //    Console.WriteLine();
-            //}
-
-            ////считаем функцию
-            //double ResultFunction = 0;
-            //for (int i = 0; i < n; i++)
-            //{
-            //    for (int j = 0; j < m; j++)
-            //    {
-            //        ResultFunction += (C[i, j].Value * C[i, j].Delivery);
-            //    }
-            //}
-            //textBox1.Text = ResultFunction.ToString();
+            }            
         }
 
         private void btn_auto_Click(object sender, EventArgs e)

@@ -7,18 +7,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace TransportTask
-{
-    struct Element
-    {
-        public decimal Delivery { get; set; }
-        public decimal Value { get; set; }
-        public static decimal FindMinElement(decimal a, decimal b)
-        {
-            if (a > b) return b;
-            if (a == b) { return a; }
-            else return a;
-        }
-    }
+{    
     class TransportProblemSolver
     {
         private int[] supply; // Запасы
